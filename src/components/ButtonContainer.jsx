@@ -1,11 +1,13 @@
 import styles from "./ButtonContainer.module.css";
-const ButtonContainer = ({ buttonNames }) => {
+const ButtonContainer = ({ buttonNames, handleOnClick }) => {
   return (
     <>
       <div className={`${styles["button-container"]}`}>
         {buttonNames.map((btnName) => (
           <button
-            className={`btn fw-normal rounded border border-secondary ${styles.mybutton}`}
+            className={`fw-normal rounded border border-secondary ${styles.mybutton}`}
+            onClick={() => handleOnClick(btnName)}
+            key={btnName}
           >
             {btnName}
           </button>
